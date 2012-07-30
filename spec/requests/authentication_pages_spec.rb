@@ -41,6 +41,8 @@ describe "Authentication" do
       describe "followed by signout" do
         before { click_link "Sign out" }
         it { should have_link('Sign in') }
+        it { should_not have_link('Profile', href: user_path(user)) }
+        it { should_not have_link('Settings', href: edit_user_path(user)) }
       end
     end
   end
@@ -84,7 +86,7 @@ describe "Authentication" do
         end
       end
     end
-  
+
     describe "as wrong user" do
       let(:user) { FactoryGirl.create(:user) }
       let(:wrong_user) { FactoryGirl.create(:user, email: "wrong@example.com") }
