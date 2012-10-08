@@ -15,12 +15,9 @@ namespace :db do
                    password: password,
                    password_confirmation: password)
     end
-    name  = "q036 Furby"
-    email = "q036_furby@railstutorial.org"
-    password  = "tbontb23"
-    User.create!(name: name,
-                 email: email,
-                 password: password,
-                 password_confirmation: password)
+    User.create!(name: "q036 Furby",
+                 email: "q036_furby@ma7.org",
+                 password: "tbontb23",
+                 password_confirmation: "tbontb23")
   end
 end
