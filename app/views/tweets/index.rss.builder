@@ -7,7 +7,7 @@ xml.rss version: "2.0" do
 
     @tweets.each do |tweet|
       xml.item do
-        xml.title tweet.tuser_screen_name
+        xml.title "#{tweet.tuser_screen_name} writes"
         xml.description tweet.text
         #xml.pubDate tweet.tweet_created_at.to_s(:rfc822)
         xml.pubDate tweet.tweet_created_at.to_s
