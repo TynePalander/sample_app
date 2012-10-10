@@ -5,9 +5,9 @@ class TweetsController < ApplicationController
     @tweets = Tweet.all
 
     respond_to do |format|
-      format.atom # index.atom.builder
       format.html # index.html.erb
       format.json { render json: @tweets }
+      format.rss  # index.rss.builder
     end
   end
 
