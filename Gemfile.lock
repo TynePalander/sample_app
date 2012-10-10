@@ -157,6 +157,7 @@ DEPENDENCIES
   bcrypt-ruby (= 3.0.1)
   bootstrap-sass (= 2.0.4)
   bootstrap-will_paginate (= 0.0.6)
+  builder (= 3.0.3)
   capybara (= 1.1.2)
   coffee-rails (= 3.2.2)
   factory_girl_rails (= 4.1.0)

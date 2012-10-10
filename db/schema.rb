@@ -11,7 +11,39 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120730175830) do
+ActiveRecord::Schema.define(:version => 20121009220338) do
+
+  create_table "flash_cards", :force => true do |t|
+    t.string   "question"
+    t.string   "answer"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "int_tests", :force => true do |t|
+    t.integer  "twitter_post_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "microposts", :force => true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
+
+  create_table "tweets", :force => true do |t|
+    t.string   "text"
+    t.string   "id_str"
+    t.datetime "tweet_created_at"
+    t.string   "tuser_id_str"
+    t.string   "tuser_screen_name"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

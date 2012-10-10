@@ -19,5 +19,10 @@ namespace :db do
                  email: "q036_furby@ma7.org",
                  password: "tbontb23",
                  password_confirmation: "tbontb23")
+    users = User.all(limit:6)
+    50.times do
+      content = Faker::Lorem.sentence(5)
+      users.each { |user| user.microposts.create!(content: content) }
+    end
   end
 end
