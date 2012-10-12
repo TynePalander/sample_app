@@ -10,7 +10,8 @@ xml.rss version: "2.0" do
         xml.title "#{tweet.tuser_screen_name} writes"
         xml.description tweet.text
         #xml.pubDate tweet.tweet_created_at.to_s(:rfc822)
-        xml.pubDate tweet.tweet_created_at.in_time_zone('Central Time (US & Canada)').rfc822
+        #xml.pubDate tweet.tweet_created_at.in_time_zone('Central Time (US & Canada)').rfc822
+        xml.pubDate tweet.tweet_created_at.in_time_zone('Central Time (US & Canada)')
         xml.link tweet_url(tweet)
         xml.guid tweet_url(tweet)
       end
