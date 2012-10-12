@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.find(:all,:limit => 30)
 
     respond_to do |format|
       format.html # index.html.erb
